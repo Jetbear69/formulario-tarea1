@@ -3,55 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Formulario de Datos Personales</title>
 </head>
 <body>
-    <section id="section">
+    <section id="section" class="py-5">
         <div class="container">
-            <form id="form">
-                <h1>Formulario de Datos Personales</h1>
-                <label for="name">Nombres:</label>
-                <input type="text" id="name" name="name">
-                <div class="error" id="name-error"></div>
-                <br>
-                <label for="surname">Apellidos:</label>
-                <input type="text" id="surname" name="surname">
-                <div class="error" id="surname-error"></div>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <div class="error" id="email-error"></div>
-                <br>
-                <label for="date">Fecha de Nacimiento:</label>
-                <input type="date" id="date" name="date">
-                <div class="error" id="date-error"></div>
-                <br>
-                <label for="pais">Pais:</label>
-                <select id="pais" name="pais">
-                    <option value="españa">España</option>
-                    <option value="portugal">Portugal</option>
-                    <option value="francia">Francia</option>
-                    <option value="alemania">Alemania</option>
-                    <option value="italia">Italia</option>
-                    <option value="reino_unido">Reino Unido</option>
-                    <option value="japon">Japon</option>
-                    <option value="china">China</option>
-                    <option value="estados_unidos">Estados Unidos</option>
-                    <option value="mexico">Mexico</option>
-                    <option value="argentina">Argentina</option>
-                </select>
-                <div class="error" id="pais-error"></div>
-                <br>
-                <input id="submit-btn" type="submit" value="Enviar">
-                <div class="form-styles">
-                <button class="theme-btn" id="classic">Estilo Clásico</button>
-                <button class="theme-btn" id="high-contrast">Estilo de Alto Contraste</button>
+            <form id="form" class="needs-validation" novalidate>
+                <h1 class="text-center mb-4">Formulario de Datos Personales</h1>
+
+                <div class="form-group">
+                    <label for="name">Nombres:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback" id="name-error">El nombre es obligatorio</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Apellidos:</label>
+                    <input type="text" class="form-control" id="surname" name="surname" required>
+                    <div class="invalid-feedback" id="surname-error">El apellido es obligatorio</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback" id="email-error">Formato de correo no válido debe contener @</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                    <div class="invalid-feedback" id="date-error">Debes ser mayor de 18 años</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pais">País:</label>
+                    <select class="form-control" id="pais" name="pais" required>
+                        <option value="">Seleccione un país</option>
+                        <option value="españa">España</option>
+                        <option value="portugal">Portugal</option>
+                        <option value="francia">Francia</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="italia">Italia</option>
+                        <option value="reino_unido">Reino Unido</option>
+                        <option value="japon">Japón</option>
+                        <option value="china">China</option>
+                        <option value="estados_unidos">Estados Unidos</option>
+                        <option value="mexico">México</option>
+                        <option value="argentina">Argentina</option>
+                    </select>
+                    <div class="invalid-feedback" id="pais-error">Debe seleccionar un país</div>
+                </div>
+
+                <button id="submit-btn" type="submit" class="btn btn-success btn-block">Enviar</button>
+
+                <div class="form-styles mt-3">
+                    <button class="theme-btn btn btn-light" id="classic">Estilo Clásico</button>
+                    <button class="theme-btn btn btn-dark ml-2" id="high-contrast">Estilo de Alto Contraste</button>
                 </div>
             </form>
         </div>
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
